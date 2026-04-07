@@ -1,0 +1,13 @@
+name: lms_analytics
+version: 1.0
+config-version: 2
+
+profile: fabric
+
+model-paths: ["models"]
+
+models:
+  lms_analytics:
+    gold:
+      +schema: gold
+      +materialized: table

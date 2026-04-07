@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: gold_course_summary
+    description: Aggregated course completion metrics, AI-ready for Copilot
+
+    columns:
+      - name: course_id
+        description: Unique identifier for each Moodle course
+
+      - name: total_enrolled
+        description: Count of learners enrolled at any time
+
+      - name: total_completed
+        description: Count of learners who completed the course
+
+      - name: completion_rate_pct
+        description: Percentage of enrolled learners who completed the course
+
+
+  - name: gold_quiz_performance
+    description: Aggregated quiz performance metrics
+
+    columns:
+      - name: quiz_id
+        description: Unique identifier of quiz
+
+      - name: avg_score
+        description: Average score achieved by learners
+
+      - name: pass_rate_pct
+        description: Percentage of learners scoring above 50%
