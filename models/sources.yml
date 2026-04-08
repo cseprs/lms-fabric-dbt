@@ -1,0 +1,10 @@
+# models/sources.yml
+version: 2
+
+sources:
+  - name: silver
+    database: contest_lms_warehouse
+    schema: silver
+    tables:
+      - name: quiz
+      - name: quiz_attempts
