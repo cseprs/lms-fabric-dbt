@@ -1,5 +1,7 @@
 {{ config(materialized='table') }}
 
+{% set silver_schema = 'silver' %}
+
 SELECT
     q.quiz_id,
     q.quiz_name,
@@ -18,8 +20,8 @@ SELECT
         ) / NULLIF(CAST(COUNT(*) AS FLOAT), 0),
         1
     )                                                   AS pass_rate_pct
-FROM {{ source('silver', 'quiz') }} q
-LEFT JOIN {{ source('silver', 'quiz_attempts') }} a
+FROM {{ silver_schema }}.quiz q
+LEFT JOIN {{ silver_schema }}.quiz_attempts a
     ON q.quiz_id = a.quiz
 GROUP BY
     q.quiz_id, q.quiz_name, q.course_id, q.max_grade
