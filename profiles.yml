@@ -1,0 +1,9 @@
+fabric:
+  target: dev
+  outputs:
+    dev:
+      type: fabric       
+      server: c4ui55yny2gezesutvnei2gjxe-tjoej7mols5ulcluxeuvn7z5qu.datawarehouse.fabric.microsoft.com
+      database: contest_lms_warehouse   
+      schema: gold
+      authentication: cli  # or ServicePrincipal etc.
